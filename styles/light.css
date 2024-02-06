@@ -8,6 +8,7 @@
   --main-text-color: #353430;
   --accent-color: #ff8dcb;
   --button-color: #353430;
+  --hover-button-color: rgb(50 49 45 / 0.4);
   --corner-color: #353430;
   --record-sign-visibility: hidden;
   --background-color: #fff1f7;
@@ -24,6 +25,7 @@
     --main-text-color: #353430;
     --accent-color: #ff8dcb;
     --button-color: #353430;
+    --hover-button-color: rgb(50 49 45 / 0.4);
     --corner-color: #353430;
     --record-sign-visibility: hidden;
     --background-color: #fff1f7;
