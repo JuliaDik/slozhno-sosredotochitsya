@@ -6,13 +6,14 @@
 
 .page {
   color: var(--main-text-color, #f1b2ce);
-  font-family: 'IBM Plex mono', monospace;
+  font-family: "IBM Plex mono", monospace;
   font-size: 18px;
   background-color: var(--background-color, #000028);
-  background-image: var(--background-image);
+  background-image: var(--background-image, url(../images/cover-image-dark.png));
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 /* МИКСЫ: начало */
@@ -39,40 +40,9 @@
   border-inline-start: 1px solid var(--corner-color, #ff0070);
 }
 
-/* Значок Rec */
-.decorated-zone__record-sign {
-  position: absolute;
-  inset-block-start: 10px;
-  inset-inline-end: 19px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  visibility: var(--record-sign-visibility);
-}
-
-.decorated-zone__record-sign::before {
-  content: "REC";
-  color: var(--record-sign-color, #ff0070);
-  line-height: 1.4;
-}
-
-.decorated-zone__record-sign::after {
-  content: "";
-  inline-size: 9px;
-  block-size: 9px;
-  background-color: var(--record-sign-color, #ff0070);
-  border-radius: 50%;
-  box-shadow: 0 0 4px 2px var(--record-sign-color, #ff0070);
-}
-
-/* Внутренние отступы */
-.content-section {
-  padding: 10px;
-}
-
-/* Подзаголовки */
-.subtitle-decor {
-  color: var(--subtitle-color, #000028);
+/* Текст с фоном */
+.text-decor {
+  color: var(--text-decor-color, #000028);
   background-color: var(--accent-color, #ff0070);
 }
 /* МИКСЫ: конец */
@@ -84,6 +54,33 @@
   grid-template-rows: 1fr min-content 1fr;
   block-size: 100vh;
   min-block-size: 668px;
+  padding: 10px;
+}
+
+/* Значок Rec */
+.header__record-sign {
+  position: absolute;
+  inset-block-start: 10px;
+  inset-inline-end: 19px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  visibility: var(--record-sign-visibility, visible);
+}
+
+.header__record-sign::before {
+  content: "REC";
+  color: #ff0070;
+  line-height: 1.4;
+}
+
+.header__record-sign::after {
+  content: "";
+  inline-size: 9px;
+  block-size: 9px;
+  background-color: #ff0070;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px #ff0070;
 }
 
 /* Переключатель тем: начало */
@@ -111,7 +108,7 @@
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid var(--hover-button-color, rgb(255 0 112 / 0.4));
+  border: 1px solid var(--hover-button-color, #ff007066);
 }
 
 .header__theme-menu-button:focus {
@@ -119,7 +116,7 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid currentColor;
+  border-block-end: 1px solid currentColor;
 }
 
 .header__theme-menu-button:disabled {
@@ -131,20 +128,114 @@
 /* Заголовок */
 .header__title {
   color: var(--main-title-color, #db00ff);
-  text-shadow: 4px 4px 0 var(--shadow-color, #ff0070);
+  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); /* 116px (min-width: 375px) -> 120px (min-width: 768px) */
   font-weight: bold;
   line-height: 0.83;
 }
 
-/* Подзаголовок */
-.header__subtitle {
+/* Текст */
+.header__description {
   align-self: center;
   inline-size: clamp(355px, 50%, 491px);
   font-weight: bold;
   line-height: 1.3;
 }
 /* ШАПКА САЙТА: конец */
+
+/* ОСНОВНОЙ КОНТЕНТ: начало */
+.content {
+  display: grid;
+  gap: 50px;
+  margin: 40px 0;
+  padding: 0 10px;
+}
+
+.text-section {
+  display: grid;
+  gap: 20px;
+}
+
+.text-section__title {
+  color: var(--title-color, #ff0070);
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.text-section__container {
+  display: grid;
+  gap: 20px;
+}
+
+.text-section__subtitle {
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.text-section__list {
+  display: grid;
+  gap: 20px;
+}
+
+.text-block {
+  display: grid;
+  gap: 10px;
+}
+
+.text-block__title {
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.text-section__container .text-block__title {
+  font-weight: normal;
+}
+
+.text-block__paragraph {
+  line-height: 1.3;
+}
+
+.text-block__link {
+  text-shadow: 2px 1px 0 var(--accent-color, #ff0070);
+  cursor: pointer;
+}
+
+.text-block__link:hover {
+  border-block-end: 1px solid currentColor;
+}
+
+.text-block__link:focus {
+  outline: none;
+}
+
+.text-block__link:focus-visible {
+  border: 1px solid currentColor;
+}
+
+.gallery {
+  display: grid;
+  gap: 10px;
+}
+
+.gallery__title {
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.gallery__list {
+  display: grid;
+  gap: 10px;
+}
+
+.gallery__list-item {
+  display: flex;
+}
+
+.gallery__image {
+  inline-size: 100%;
+  object-fit: cover;
+}
+/* ОСНОВНОЙ КОНТЕНТ: конец */
 
 /* БРЕЙКПОИНТЫ: начало */
 /* 768px */
@@ -160,35 +251,68 @@
     inset-block-end: 20px;
     inset-inline-start: 20px;
   }
+  /* МИКСЫ: конец */
+
+  /* ШАПКА САЙТА: начало */
+  .header {
+    padding: 20px;
+  }
 
   /* Значок Rec */
-  .decorated-zone__record-sign {
+  .header__record-sign {
     inset-block-start: 20px;
     inset-inline-end: 29px;
   }
 
-  /* Внутренние отступы */
-  .content-section {
-    padding: 20px;
-  }
-  /* МИКСЫ: конец */
-
-  /* ШАПКА САЙТА: начало */
   .header__title {
-    margin-left: -20px;
+    margin-inline-start: -20px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem); /* 120px (min-width: 768px) -> 157px (min-width: 1024px) */
   }
 
-  .header__subtitle {
+  .header__description {
     justify-self: end;
   }
   /* ШАПКА САЙТА: конец */
+
+  /* ОСНОВНОЙ КОНТЕНТ: начало */
+  .content {
+    gap: 80px;
+    margin: 60px 0;
+    padding: 0 20px;
+  }
+
+  .text-section {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .text-section:nth-of-type(even) .text-section__list {
+    grid-column: 1 / -1;
+  }
+
+  .gallery {
+    gap: 20px;
+  }
+
+  .gallery__list {
+    grid-template-columns: repeat(3, auto);
+    gap: 20px;
+  }
+
+  .gallery__list-item:nth-of-type(1),
+  .gallery__list-item:nth-of-type(5) {
+    grid-column: span 2;
+  }
+
+  .gallery__list-item:nth-of-type(2),
+  .gallery__list-item:nth-of-type(3) {
+    grid-row: span 2;
+  }
+  /* ОСНОВНОЙ КОНТЕНТ: конец */
 }
 
 /* 1024px */
 @media screen and (min-width: 1024px) {
-  /* ШАПКА САЙТА: начало */
-  /* Переключатель тем: начало */
+  /* ШАПКА САЙТА */
   .header__theme-menu {
     justify-self: center;
     align-self: start;
@@ -197,6 +321,10 @@
   .header__theme-menu-list {
     flex-direction: row;
   }
-  /* ШАПКА САЙТА: конец */
+
+  /* ОСНОВНОЙ КОНТЕНТ */
+  .text-section:nth-of-type(even) .text-section__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 /* БРЕЙКПОИНТЫ: конец */

@@ -1,16 +1,15 @@
 /* СВЕТЛАЯ ТЕМА */
 
 :root .theme_light {
-  --main-title-color: #ffc2e6;
-  --shadow-color: #ff8dcb;
-  --title-color: #353430;
-  --subtitle-color: #353430;
-  --main-text-color: #353430;
-  --accent-color: #ff8dcb;
   --button-color: #353430;
-  --hover-button-color: rgb(50 49 45 / 0.4);
-  --corner-color: #353430;
+  --hover-button-color: #32312d66;
   --record-sign-visibility: hidden;
+  --corner-color: #353430;
+  --main-title-color: #ffc2e6;
+  --accent-color: #ff8dcb;
+  --title-color: #353430;
+  --text-decor-color: #353430;
+  --main-text-color: #353430;
   --background-color: #fff1f7;
   --background-image: url(../images/cover-image-light.png);
 }
@@ -18,17 +17,16 @@
 /* НАСТРОЙКИ ПОЛЬЗОВАТЕЛЯ: светлая тема */
 @media (prefers-color-scheme: light) {
   :root {
-    --main-title-color: #ffc2e6;
-    --shadow-color: #ff8dcb;
-    --title-color: #353430;
-    --subtitle-color: #353430;
-    --main-text-color: #353430;
-    --accent-color: #ff8dcb;
     --button-color: #353430;
-    --hover-button-color: rgb(50 49 45 / 0.4);
-    --corner-color: #353430;
+    --hover-button-color: #32312d66;
     --record-sign-visibility: hidden;
+    --corner-color: #353430;
+    --main-title-color: #ffc2e6;
+    --accent-color: #ff8dcb;
+    --title-color: #353430;
+    --text-decor-color: #353430;
+    --main-text-color: #353430;
     --background-color: #fff1f7;
-    --background-image: url(../images/cover-image-light.png);   
+    --background-image: url(../images/cover-image-light.png);
   }
 }
