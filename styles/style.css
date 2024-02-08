@@ -237,6 +237,25 @@
 }
 /* ОСНОВНОЙ КОНТЕНТ: конец */
 
+/* ПОДВАЛ САЙТА: начало */
+.footer {
+  position: relative;
+  display: grid;
+  place-items: center;
+  block-size: 100vh;
+  min-block-size: 668px;
+  padding: 10px;
+}
+
+.footer__text {
+  color: var(--main-title-color, #db00ff);
+  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); /* 116px (min-width: 375px) -> 120px (min-width: 768px) */
+  font-weight: bold;
+  line-height: 0.83;
+}
+/* ПОДВАЛ САЙТА: конец */
+
 /* БРЕЙКПОИНТЫ: начало */
 /* 768px */
 @media screen and (min-width: 768px) {
@@ -308,6 +327,11 @@
     grid-row: span 2;
   }
   /* ОСНОВНОЙ КОНТЕНТ: конец */
+
+  /* ПОДВАЛ САЙТА */
+  .footer__text {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem); /* 120px (min-width: 768px) -> 157px (min-width: 1024px) */
+  }
 }
 
 /* 1024px */
